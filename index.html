@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+
+<html>
+        <head>
+                <title>Music Player</title>
+        </head>
+        <body onload="focusInput()">
+
+            <input id="inputBeat" type="text" placeholder="Enter any key" onkeypress="playBeat(event)">
+
+            <audio id="audio1">
+                <source src="yoursong.mp3" type="audio/mpeg">
+            </audio>
+
+
+            <audio id="audio2">
+                    <source src="energy.mp3" type="audio/mpeg">
+            </audio>
+
+
+        <script>
+                function focusInput(){
+
+                        document.getElementById('inputBeat').focus();
+
+                }
+                function playBeat(e){
+                      var kick = document.getElementById('audio1');
+                     var clap= document.getElementById('audio2');
+                        if(e.key==' '){
+                            //play the clap
+                           clap.pause();
+                                  clap.currentTime = 0;
+
+                            clap.play();
+                            return;
+                            }
+                            //play the kick
+                                kick.pause();
+                                kick.currentTime = 0;
+                              kick.play();
+                            return;
+                }
+
+        </script>
+
+
+        </body>
+
+</html>
